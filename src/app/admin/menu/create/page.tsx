@@ -9,6 +9,7 @@ import { Textarea } from '@/components/ui/textarea'
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select'
 import UploadImage from '@/components/UploadImage'
 import { createMenuAction } from '@/actions/createMenu'
+import {motion} from "framer-motion"
 type Props = {}
 
 const page = (props: Props) => {
@@ -21,11 +22,19 @@ const page = (props: Props) => {
         return formAction(formData)
     }
     return (
-        <div className='min-h-screen flex justify-center py-12 items-start'>
-            <Card className='w-full max-w-xl'>
+        <motion.div 
+        initial="hidden"
+        whileInView="visible"
+        viewport={{once:true, amount:0.2}}
+        variants={{
+            hidden:{opacity:0, y:40},
+            visible:{opacity:1, y:0}
+        }}
+        className='min-h-screen flex justify-center py-12 items-start '>
+            <Card className='w-full max-w-xl  bg-white/90 shadow-xl border border-yellow-100'>
                 <CardHeader>
                     <CardTitle className='flex justify-between items-center '>
-                        <h1>Add New Menu Item</h1>
+                        <h1 className='text-xl font-semibold text-slate-800'>Add New Menu Item</h1>
                         <Link href={"/admin/menu"}><Button variant={"link"} className='cursor-pointer'>All Menu List</Button></Link>
                     </CardTitle>
                 </CardHeader>
@@ -91,7 +100,7 @@ const page = (props: Props) => {
                     </form>
                 </CardContent>
             </Card>
-        </div>
+        </motion.div>
     )
 }
 

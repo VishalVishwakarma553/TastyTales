@@ -1,16 +1,34 @@
 "use client"
 import Link from 'next/link'
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { Input } from '../ui/input'
 import { Ghost, Menu, Search, ShoppingCart, X } from 'lucide-react'
 import { Button } from '../ui/button'
 import { SignedIn, UserButton } from '@clerk/nextjs'
 import { useStore } from '@/store/store'
 import { motion, AnimatePresence } from "framer-motion"
+import { redirect, usePathname, useRouter } from 'next/navigation'
 
 const Navbar = () => {
     const cart = useStore((store) => store.cart)
     const [menuOpen, setMenuOpen] = useState(false)
+    const pathName = usePathname()
+    // Adding search functionality
+    const [search, setSearch] = useState("")
+    const router = useRouter()
+    useEffect(() => {
+        const handler = setTimeout(() => {
+            if (search.trim()) {
+                router.push(`/menu?search=${search}`)
+            } else {
+                if (pathName === "/menu") {
+                    router.push("/menu");
+                }
+            }
+        }, 500)
+        return () => clearTimeout(handler)
+    }, [search, router])
+
     return (
         <header className='sticky top-0 z-50 w-full border-b backdrop-blur-lg bg-gradient-to-r from-green-50 via-yellow-50 to-orange-50'>
             <div className='container flex justify-between h-16 items-center mx-auto'>
@@ -21,7 +39,7 @@ const Navbar = () => {
                     </Link>
                     <nav className='hidden md:flex space-x-4'>
                         <Link href="/menu" className='font-semibold hover:text-green-600 transition'>Menu</Link>
-                        <Link href="/about" className='font-semibold hover:text-yellow-600 transition'>About</Link>
+                        <Link href="/#about" className='font-semibold hover:text-yellow-600 transition'>About</Link>
                         <Link href="/admin/menu/create" className='font-semibold hover:text-orange-500 transition'>Admin</Link>
                     </nav>
                 </div>
@@ -29,7 +47,7 @@ const Navbar = () => {
                 <div className='flex space-x-3 items-center'>
                     <div className='hidden sm:block relative space-x-6'>
                         <Search className='absolute top-2 left-3 h-5 w-5 text-muted-foreground' />
-                        <Input className='pl-10 md:w-[250px] w-[160px] rounded-full shadow-sm focus:ring-2 focus:ring-green-400' placeholder='Search menu...' />
+                        <Input className='pl-10 md:w-[250px] w-[160px] rounded-full shadow-sm focus:ring-2 focus:ring-green-400' placeholder='Search menu...' value={search} onChange={(e) => setSearch(e.target.value)} />
                     </div>
                     {/* Cart */}
                     <Link href="/cart">

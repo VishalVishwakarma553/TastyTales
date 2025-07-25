@@ -20,7 +20,7 @@ const UpdateMenu = ({ menu }: { menu: MenuItem }) => {
   return (
     <Dialog>
       <DialogTrigger asChild>
-        <Button variant="outline"><SquarePen /></Button>
+        <Button variant="outline" className='hover:scale-95 cursor-pointer'><SquarePen /></Button>
       </DialogTrigger>
       <DialogContent className="sm:max-w-[425px]">
         <form action={formHandle}>
@@ -46,7 +46,7 @@ const UpdateMenu = ({ menu }: { menu: MenuItem }) => {
                 formState.errors.description && (<p className='text-red-500 text-sm'>{formState.errors.description}</p>)
               }
             </div>
-            <div className="grid gap-3">
+            <div className="grid gap-3 ">
               <Label htmlFor="category">Category</Label>
               <Select name='category'>
                 <SelectTrigger id="category" className='w-full'>
@@ -64,7 +64,7 @@ const UpdateMenu = ({ menu }: { menu: MenuItem }) => {
                 formState.errors.category && (<p className='text-red-500 text-sm'>{formState.errors.category}</p>)
               }
             </div>
-            <div className="grid gap-3">
+            <div className="grid gap-3 mb-4">
               <Label htmlFor="price">Price</Label>
               <Input id="price" name="price" defaultValue={menu.price} />
               {
@@ -74,9 +74,9 @@ const UpdateMenu = ({ menu }: { menu: MenuItem }) => {
           </div>
           <DialogFooter>
             <DialogClose asChild>
-              <Button variant="outline">Cancel</Button>
+              <Button variant="outline" className='hover:scale-95 cursor-pointer'>Cancel</Button>
             </DialogClose>
-            <Button type="submit" disabled={isPending}>{isPending ? "Saving changes" : "Save changes"}</Button>
+            <Button type="submit" className='hover:scale-95 cursor-pointer' disabled={isPending}>{isPending ? "Saving changes" : "Save changes"}</Button>
           </DialogFooter>
         </form>
       </DialogContent>

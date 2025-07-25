@@ -15,7 +15,7 @@ const DeleteMenuItem = ({id}:{id:string}) => {
     }
   return (
     <form action={handleDelete}>
-        <Button disabled={isPending} className='cursor-pointer'>
+        <Button disabled={isPending} className='cursor-pointer hover:scale-95'>
             <Trash2 className='h-4 w-4' size={"icon"}/>
         </Button>
     </form>

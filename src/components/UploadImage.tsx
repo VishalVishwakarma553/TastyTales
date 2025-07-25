@@ -8,6 +8,9 @@ import {
     upload,
 } from "@imagekit/next";
 import { useRef, useState } from "react";
+import { Label } from "./ui/label";
+import { Input } from "./ui/input";
+import { Button } from "./ui/button";
 
 //Declaring type of the setImageUrl function which takes string as argument and return type is void
 type UploadImageProp = {
@@ -127,9 +130,9 @@ const UploadImage = ({setImageUrl}:UploadImageProp) => {
     return (
         <>
             {/* File input element using React ref */}
-            <input type="file" ref={fileInputRef} />
+            <input type="file" className="p-2 py-1 font-medium border rounded-lg my-2" ref={fileInputRef} />
             {/* Button to trigger the upload process */}
-            <button type="button" onClick={handleUpload}>
+            <button type="button" className="ml-2 p-2 py-1 border bg-black/10 cursor-pointer rounded-lg hover:scale-95 transition-all duration-150" onClick={handleUpload}>
                 Upload file
             </button>
             <br />
