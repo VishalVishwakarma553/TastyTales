@@ -17,7 +17,7 @@ const MenuPage = async({ searchParams }: { searchParams: { search?: string } }) 
   return (
     <div className='p-4'>
         <div className='my-6'>
-            <h1 className='text-3xl text-slate-700 font-bold my-3'>Our Delecious Menu</h1>
+            <h1 className='sm:text-3xl text-[27px] text-slate-700 font-bold my-3'>Our Delecious Menu</h1>
         </div>
         {/* Suspence is used to show loading while data is fetching from server */}
         <Suspense fallback={<MenuSkeleton />}> 

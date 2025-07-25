@@ -4,6 +4,7 @@ import { Card, CardContent, CardHeader } from './ui/card'
 import { Button } from './ui/button'
 import Image from 'next/image'
 import { motion } from 'framer-motion'
+import Link from 'next/link'
 
 type Props = {}
 
@@ -14,9 +15,9 @@ const FeatureSection = (props: Props) => {
     //   })
     return (
         <section className='container mx-auto mt-14'>
-            <h1 className='text-center text-4xl font-bold'>Featured Dishes</h1>
-            <p className='text-lg text-muted-foreground text-center'>Discover our most popular dishes, carefully crafted by our expert chefs</p>
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 mt-10">
+            <h1 className='text-center sm:text-4xl font-bold text-2xl'>Featured Dishes</h1>
+            <p className='sm:text-lg text-[15px] text-muted-foreground text-center'>Discover our most popular dishes, carefully crafted by our expert chefs</p>
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 mt-10 mx-2 sm:mx-0">
                 {/* Card-1 */}
                 <motion.div
                 initial="hidden"
@@ -29,7 +30,7 @@ const FeatureSection = (props: Props) => {
                 }}
                 >
                 <Card className='pt-0'>
-                    <CardHeader className='p-0 relative h-66 '>
+                    <CardHeader className='p-0 relative sm:h-66 h-46 '>
                         <Image
                             src="/pasta-carbonara.webp"
                             alt="pasta-carbonara.webp"
@@ -41,8 +42,9 @@ const FeatureSection = (props: Props) => {
                         <h1 className='font-medium text-lg'>Pasta Carbonara</h1>
                         <p className='text-muted-foreground text-sm'>A classic Italian pasta dish made with eggs, cheese, pancetta, and pepper.</p>
                         <div className='mt-3 flex justify-between'>
-                            <span className='font-bold text-2xl text-orange-600'>$28</span>
-                            <Button className='bg-orange-600 hover:bg-orange-700 hover:scale-95 cursor-pointer transition-all duration-200'>Order Now</Button>
+                            <span className='font-bold text-2xl text-orange-600'>₹210</span>
+                            <Link href='/menu'>
+                            <Button className='bg-orange-600 hover:bg-orange-700 hover:scale-95 cursor-pointer transition-all duration-200'>Order Now</Button></Link>
                         </div>
                     </CardContent>
                 </Card>
@@ -59,7 +61,7 @@ const FeatureSection = (props: Props) => {
                 }}
                 >
                 <Card className='pt-0'>
-                    <CardHeader className='p-0 relative h-66 '>
+                    <CardHeader className='p-0 relative sm:h-66 h-46 '>
                         <Image
                             src="/pizza-margherita.jpg"
                             alt="pizza-margherita.jpg"
@@ -71,8 +73,9 @@ const FeatureSection = (props: Props) => {
                         <h1 className='font-medium text-lg'>Pizza Margherita</h1>
                         <p className='text-muted-foreground text-sm'>A traditional Neapolitan pizza topped with fresh tomatoes, mozzarella cheese, basil, and olive oil.</p>
                         <div className='mt-3 flex justify-between'>
-                            <span className='font-bold text-2xl text-orange-600'>$34</span>
-                            <Button className='bg-orange-600 hover:bg-orange-700 hover:scale-95 cursor-pointer transition-all duration-200'>Order Now</Button>
+                            <span className='font-bold text-2xl text-orange-600'>₹109</span>
+                            <Link href={"/menu"}>
+                            <Button className='bg-orange-600 hover:bg-orange-700 hover:scale-95 cursor-pointer transition-all duration-200'>Order Now</Button></Link>
                         </div>
                     </CardContent>
                 </Card>
@@ -89,7 +92,7 @@ const FeatureSection = (props: Props) => {
                 }}
                 >
                 <Card className='pt-0'>
-                    <CardHeader className='p-0 relative h-66'>
+                    <CardHeader className='p-0 relative sm:h-66 h-46'>
                         <Image
                             src="/truffle-pasta.webp"
                             alt="truffle-pasta.webp"
@@ -102,7 +105,8 @@ const FeatureSection = (props: Props) => {
                         <p className='text-muted-foreground text-sm'>Indulgent pasta tossed with creamy sauce and aromatic truffle, delivering a rich and luxurious flavor experience.</p>
                         <div className='mt-3 flex justify-between'>
                             <span className='font-bold text-2xl text-orange-600'>$38</span>
-                            <Button className='bg-orange-600 hover:bg-orange-700 hover:scale-95 cursor-pointer transition-all duration-200'>Order Now</Button>
+                            <Link href={"/menu"}>
+                            <Button className='bg-orange-600 hover:bg-orange-700 hover:scale-95 cursor-pointer transition-all duration-200'>Order Now</Button></Link>
                         </div>
                     </CardContent>
                 </Card>

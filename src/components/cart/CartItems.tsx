@@ -24,7 +24,7 @@ const CartItems = ({ item }: { item: CartItem }) => {
                 <div className='flex justify-between items-start'>
                     <div>
                         <h3 className='text-lg font-medium'>{item.name}</h3>
-                        <p className='text-muted-foreground'>${item.price}</p>
+                        <p className='text-muted-foreground'>₹{item.price}</p>
                     </div>
                     <Button variant={"outline"} className='hover:scale-95 cursor-pointer' size={"icon"} onClick={() => removeFromCart(item.id)}>
                         <X className="h-4 w-4" />

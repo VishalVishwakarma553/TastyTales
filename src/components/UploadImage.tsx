@@ -130,7 +130,7 @@ const UploadImage = ({setImageUrl}:UploadImageProp) => {
     return (
         <>
             {/* File input element using React ref */}
-            <input type="file" className="p-2 py-1 font-medium border rounded-lg my-2" ref={fileInputRef} />
+            <input type="file" className="w-full sm:w-[70%] p-2 py-1 font-medium border rounded-lg my-2" ref={fileInputRef} />
             {/* Button to trigger the upload process */}
             <button type="button" className="ml-2 p-2 py-1 border bg-black/10 cursor-pointer rounded-lg hover:scale-95 transition-all duration-150" onClick={handleUpload}>
                 Upload file

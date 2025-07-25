@@ -10,7 +10,7 @@ const page = async (props: Props) => {
   })
   return (
     <div className='lg:max-w-6xl lg:mx-auto mx-2'>
-      <h1 className='text-3xl font-bold my-6 text-slate-600'>Our Delicious Menu List</h1>
+      <h1 className='sm:text-3xl text-[27px] font-bold my-6 text-slate-600'>Our Delicious Menu List</h1>
       <MenuTableMotionWrapper allMenuItems={allMenuItems}/>
     </div>
   )

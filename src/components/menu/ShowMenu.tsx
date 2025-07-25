@@ -29,7 +29,7 @@ const ShowMenu = (props: Props) => {
                 <p className='text-muted-foreground text-sm'>{props.menuItem.description}</p>
             </CardContent>
             <CardFooter className='flex justify-between items-center'>
-                <span className='font-bold text-2xl text-orange-600'>${props.menuItem.price}</span>
+                <span className='font-bold text-2xl text-orange-600'>₹{props.menuItem.price}</span>
                 <Button className='bg-orange-600 hover:bg-orange-700 hover:scale-95 cursor-pointer transition-all duration-200' onClick={() => addToCart(props.menuItem)}>
                     <BadgePlus className='h-4 w-4' />
                     Add to card

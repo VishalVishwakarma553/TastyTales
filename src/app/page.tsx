@@ -67,10 +67,10 @@ export default function Home() {
         {/* Feature Section */}
         <FeatureSection />
         {/* About Section */}
-        <section id="about" className="md:mx-6 sm:mx-4 mx-2 py-16">
+        <section id="about" className="md:mx-6 sm:mx-4 mx-2 py-14">
           <div className="mb-10">
-<h1 className="text-4xl font-bold text-center">About Our Restaurant</h1>
-          <p className="text-lg text-muted-foreground text-center">From farm-to-table freshness to artisanal preparation methods, every aspect of our kitchen is designed to deliver an unforgettable dining experience.</p>
+<h1 className="text-center sm:text-4xl font-bold text-2xl">About Our Restaurant</h1>
+          <p className="sm:text-lg text-[15px] text-muted-foreground text-center">From farm-to-table freshness to artisanal preparation methods, every aspect of our kitchen is designed to deliver an unforgettable dining experience.</p>
           </div>
           
           <motion.div

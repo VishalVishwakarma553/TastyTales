@@ -30,11 +30,11 @@ const page = (props: Props) => {
             hidden:{opacity:0, y:40},
             visible:{opacity:1, y:0}
         }}
-        className='min-h-screen flex justify-center py-12 items-start '>
+        className='min-h-screen flex justify-center py-12 items-start mx-2'>
             <Card className='w-full max-w-xl  bg-white/90 shadow-xl border border-yellow-100'>
                 <CardHeader>
                     <CardTitle className='flex justify-between items-center '>
-                        <h1 className='text-xl font-semibold text-slate-800'>Add New Menu Item</h1>
+                        <h1 className='sm:text-xl text-lg font-semibold text-slate-800'>Add New Menu Item</h1>
                         <Link href={"/admin/menu"}><Button variant={"link"} className='cursor-pointer'>All Menu List</Button></Link>
                     </CardTitle>
                 </CardHeader>

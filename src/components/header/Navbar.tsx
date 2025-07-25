@@ -33,7 +33,7 @@ const Navbar = () => {
         <header className='sticky top-0 z-50 w-full border-b backdrop-blur-lg bg-gradient-to-r from-green-50 via-yellow-50 to-orange-50'>
             <div className='container flex justify-between h-16 items-center mx-auto'>
                 {/* Logo & Main Nav */}
-                <div className='flex items-center space-x-6 md:space-x-8'>
+                <div className='flex items-center space-x-6 md:space-x-8 mx-1 sm:mx-0'>
                     <Link href="/" className='font-extrabold text-xl bg-gradient-to-r from-green-500 via-yellow-400 to-orange-500 bg-clip-text text-transparent tracking-wide drop-shadow border-2 border-blue-300'>
                         TastyTales
                     </Link>
@@ -89,7 +89,7 @@ const Navbar = () => {
                         className='md:hidden flex flex-col m-2 space-y-4 bg-white/80 rounded-xl shadow-lg p-4'
                     >
                         <Link href="/menu" className='font-medium text-center hover:text-green-600 transition'>Menu</Link>
-                        <Link href="/about" className='font-medium text-center hover:text-yellow-600 transition'>About</Link>
+                        <Link href="/#about" className='font-medium text-center hover:text-yellow-600 transition'>About</Link>
                         <Link href="/admin/menu/create" className='font-medium text-center hover:text-orange-500 transition'>Admin</Link>
                         <div className='sm:hidden relative mt-2'>
                             <Search className='absolute top-2 left-3 h-5 w-5 text-muted-foreground' />

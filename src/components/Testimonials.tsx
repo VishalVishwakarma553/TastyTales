@@ -24,8 +24,8 @@ const Testimonials = (props: Props) => {
     return (
         <section className='md:mx-6 sm:mx-4 mx-2 space-y-9 mb-14'>
             <div className='text-center'>
-                <h1 className='text-3xl font-bold'>What Our Guest Says</h1>
-                <p className='text-muted-foreground'>Don't just take our word for it - hear from our satisfied customer</p>
+                <h1 className='text-center sm:text-4xl font-bold text-2xl'>What Our Guest Says</h1>
+                <p className='sm:text-lg text-[15px] text-muted-foreground text-center'>Don't just take our word for it - hear from our satisfied customer</p>
             </div>
             <div className='grid grid-cols-1 md:grid-cols-3 gap-4'>
                 {

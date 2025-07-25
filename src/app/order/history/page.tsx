@@ -66,7 +66,7 @@ const OrderHistory = () => {
   };
   return (
     <div className="mx-2 sm:mx-8">
-      <h1 className="text-3xl text-slate-800 font-bold my-6 mb-2 ">
+      <h1 className="sm:text-3xl text-[27px] text-slate-800 font-bold my-6 mb-2 ">
         My Orders
       </h1>
       <div className="flex gap-4">

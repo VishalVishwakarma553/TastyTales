@@ -23,16 +23,16 @@ const CartSummary = () => {
             <h3 className='text-lg font-medium'>Order Summary</h3>
             <div className='flex justify-between items-center'>
                 <span className='font-medium'>Price</span>
-                <span>{totalPrice}</span>
+                <span>₹{totalPrice}</span>
             </div>
             <div className='flex justify-between items-center'>
                 <span className='font-medium'>Tax</span>
-                <span>$2.0</span>
+                <span>₹2.0</span>
             </div>
             <Separator />
             <div className='flex justify-between items-center'>
                 <span className='font-semibold'>Total</span>
-                <span className='font-semibold'>{TotalCost}</span>
+                <span className='font-semibold'>₹{TotalCost}</span>
             </div>
             <Link href={"/order/address"}>
                 <Button className='w-full mt-4 bg-orange-600 hover:bg-orange-700 cursor-pointer hover:scale-95'>Buy All</Button></Link>
