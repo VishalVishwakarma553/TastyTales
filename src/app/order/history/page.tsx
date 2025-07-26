@@ -1,24 +1,27 @@
 "use client";
 import { getOrder } from "@/actions/makeOrder";
 import { Button } from "@/components/ui/button";
-import React, { Suspense, useEffect, useState } from "react";
+import React, {useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { ListFilter } from "lucide-react";
 import OrderCard from "@/components/order/OrderCard";
 import OrderSkelaton from "@/components/order/OrderSkelaton";
 import ProtectedRoute from "@/components/ProtectedRoute";
+import { Order } from "@/components/order/OrderCard";
+
+
 
 const OrderHistory = () => {
   const [startDate, setStartDate] = useState("");
   const [endDate, setEndDate] = useState("");
-  const [orders, setOrders] = useState<any[]>([]);
+  const [orders, setOrders] = useState<Order[]>([]);
   const [picked, setPicked] = useState(false);
   const [applyFilter, setApplyFilter] = useState(false);
   const [loading, setLoading] = useState(true)
   const fetchOrders = async (start?: Date, end?: Date) => {
     setLoading(true)
     const result = await getOrder(start, end);
-    setOrders(result ?? []); //if result is undefined then take empty array
+    setOrders(result); //if result is undefined then take empty array
     setLoading(false)
   };
 

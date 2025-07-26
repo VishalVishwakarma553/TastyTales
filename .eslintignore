@@ -1,0 +1,8 @@
+.next/
+node_modules/
+out/
+build/
+dist/
+**/generated/**
+**/*.wasm.js
+src/generated/prisma/wasm.js

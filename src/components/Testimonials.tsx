@@ -1,9 +1,7 @@
 import { Star } from 'lucide-react'
 import React from 'react'
 
-type Props = {}
-
-const Testimonials = (props: Props) => {
+const Testimonials = () => {
     const testUser = [
         {
             name: "Surash Jain",
@@ -25,7 +23,7 @@ const Testimonials = (props: Props) => {
         <section className='md:mx-6 sm:mx-4 mx-2 space-y-9 mb-14'>
             <div className='text-center'>
                 <h1 className='text-center sm:text-4xl font-bold text-2xl'>What Our Guest Says</h1>
-                <p className='sm:text-lg text-[15px] text-muted-foreground text-center'>Don't just take our word for it - hear from our satisfied customer</p>
+                <p className='sm:text-lg text-[15px] text-muted-foreground text-center'>Don&apos;t just take our word for it - hear from our satisfied customer</p>
             </div>
             <div className='grid grid-cols-1 md:grid-cols-3 gap-4'>
                 {

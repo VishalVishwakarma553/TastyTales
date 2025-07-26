@@ -1,10 +1,9 @@
-import { Locate, LocateIcon, MapPin, Phone, Pin } from 'lucide-react'
+import { MapPin, Phone } from 'lucide-react'
 import Link from 'next/link'
 import React from 'react'
 
-type Props = {}
 
-const Footer = (props: Props) => {
+const Footer = () => {
     return (
         <section className='p-4'>
             <div className='grid grid-cols-1 sm:grid-cols-3 gap-2 '>

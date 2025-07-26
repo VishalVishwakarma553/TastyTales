@@ -9,9 +9,8 @@ import { motion } from "framer-motion"
 import ProtectedRoute from '@/components/ProtectedRoute'
 import Link from 'next/link'
 
-type Props = {}
 
-const Cart = (props: Props) => {
+const Cart = () => {
     const cartItems = useStore((store) => store.cart)
     return (
         <ProtectedRoute>
@@ -22,8 +21,8 @@ const Cart = (props: Props) => {
                         <Link href="/order/history">View all Order</Link>
                     </Button>
                 </div>
-                <div className={`${cartItems.length > 0}?'grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8':"w-[100vw]"`}>
-                    <div className={`${cartItems.length > 0}?"lg:col-span-2":"w-full"`}>
+                <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8'>
+                    <div className="lg:col-span-2">
                         {
                             cartItems.length > 0 ? (
                                 cartItems.map((item, idx) => (
@@ -36,8 +35,9 @@ const Cart = (props: Props) => {
                                             hidden: { opacity: 0, y: 40 },
                                             visible: { opacity: 1, y: 0 }
                                         }}
+                                        key={item.id}
                                     >
-                                        <CartItems key={item.id} item={item} />
+                                        <CartItems item={item} />
                                     </motion.div>
                                 ))
                             ) : (
@@ -75,7 +75,6 @@ const Cart = (props: Props) => {
                             )
                         }
                     </div>
-
                     {
                         cartItems.length > 0 && (
                             <div className='col-span-1'>

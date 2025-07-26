@@ -1,4 +1,4 @@
-import { clerkMiddleware, createRouteMatcher } from '@clerk/nextjs/server'
+import { clerkMiddleware } from '@clerk/nextjs/server'
 
 // It just move to the signin page if user is not logged in
 // const isPublicRoute = createRouteMatcher(['/sign-in(.*)'])

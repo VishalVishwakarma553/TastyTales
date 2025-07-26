@@ -2,14 +2,15 @@
 import Link from 'next/link'
 import React, { useEffect, useState } from 'react'
 import { Input } from '../ui/input'
-import { Ghost, Menu, Search, ShoppingCart, X } from 'lucide-react'
+import { Menu, Search, ShoppingCart, X } from 'lucide-react'
 import { Button } from '../ui/button'
-import { SignedIn, SignedOut, SignInButton, SignUpButton, UserButton } from '@clerk/nextjs'
+import { SignedIn, SignedOut, SignUpButton, useAuth, UserButton } from '@clerk/nextjs'
 import { useStore } from '@/store/store'
 import { motion, AnimatePresence } from "framer-motion"
-import { redirect, usePathname, useRouter } from 'next/navigation'
+import { usePathname, useRouter } from 'next/navigation'
 
 const Navbar = () => {
+    const {isSignedIn} = useAuth()
     const cart = useStore((store) => store.cart)
     const [menuOpen, setMenuOpen] = useState(false)
     const pathName = usePathname()
@@ -27,7 +28,7 @@ const Navbar = () => {
             }
         }, 500)
         return () => clearTimeout(handler)
-    }, [search, router])
+    }, [search, router, pathName])
 
     return (
         <header className='sticky top-0 z-50 w-full border-b backdrop-blur-lg bg-gradient-to-r from-green-50 via-yellow-50 to-orange-50'>
@@ -54,7 +55,7 @@ const Navbar = () => {
                         <Button className="relative cursor-pointer" variant="ghost">
                             <ShoppingCart className='h-5 w-5' />
                             <AnimatePresence>
-                                {cart.length > 0 && (
+                                {isSignedIn && cart.length > 0 && (
                                     <motion.span
                                         initial={{ scale: 0 }}
                                         animate={{ scale: 1 }}
@@ -62,7 +63,7 @@ const Navbar = () => {
                                         transition={{ type: "spring", stiffness: 300 }}
                                         className='absolute -top-2 -right-2 h-5 w-5 flex items-center justify-center text-zinc-100 bg-gradient-to-r from-red-500 to-orange-400 rounded-full text-xs font-bold shadow'
                                     >
-                                        {cart.length}
+                                        { cart.length}
                                     </motion.span>
                                 )}
                             </AnimatePresence>

@@ -2,9 +2,22 @@ import { Image } from '@imagekit/next'
 import React from 'react'
 import NoOrder from './NoOrder'
 
-type Props = {}
+export interface OrderItem {
+    id: string;
+    name: string;
+    quantity: number;
+    price: number;
+    imageUrl: string;
+}
 
-const OrderCard = ({ orders }: { orders: any[] }) => {
+export interface Order {
+    id: string;
+    totalAmount: number;
+    createdAt: string | Date;
+    items: OrderItem[];
+}
+
+const OrderCard = ({ orders }: { orders: Order[] }) => {
     return (
         orders.length > 0 ?
             (
@@ -20,7 +33,7 @@ const OrderCard = ({ orders }: { orders: any[] }) => {
                             <p className='text-[16px] text-muted-foreground font-normal'>Placed on: {new Date(order.createdAt).toLocaleString()}</p>
                             <div className='grid grid-cols-1  gap-2'>
                                 {
-                                    order.items.map((item: any) => (
+                                    order.items.map((item) => (
                                         <div key={item.id} className='flex justify-between border-b p-2'>
                                             <div>
                                                 <h3 className='text-lg font-bold'>{item.name}</h3>

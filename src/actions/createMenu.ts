@@ -4,7 +4,7 @@ import { revalidatePath } from "next/cache"
 import { redirect } from "next/navigation"
 import {z} from "zod"
 
-type createMenuFormState = {
+export type createMenuFormState = {
     errors:{
         name ?: string[],
         description ?: string[],

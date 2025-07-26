@@ -7,16 +7,14 @@ import { Select, SelectContent, SelectGroup, SelectItem, SelectTrigger, SelectVa
 import { Separator } from '@/components/ui/separator'
 import { Textarea } from '@/components/ui/textarea'
 import { useStore } from '@/store/store'
-import Link from 'next/link'
 import React, { useState } from 'react'
 import { motion } from "framer-motion"
 import toast from 'react-hot-toast'
 import { useRouter } from 'next/navigation'
 import ProtectedRoute from '@/components/ProtectedRoute'
 
-type Props = {}
 
-const Address = (props: Props) => {
+const Address = () => {
   const { cart } = useStore()
   const router = useRouter()
   const totalAmount = cart.reduce((acc, item) => acc + item.price * item.quantity, 0)
@@ -129,8 +127,8 @@ const Address = (props: Props) => {
               <h3 className='text-xl font-semibold'>Price Details:</h3>
               <Separator />
               <div>
-                {cart.map((item) => (
-                  <div className='flex justify-between'>
+                {cart.map((item, idx) => (
+                  <div className='flex justify-between' key={idx}>
                     <p>{item.name}</p>
                     <p>₹{item.quantity}×{item.price}</p>
                   </div>

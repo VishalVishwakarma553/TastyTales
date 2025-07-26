@@ -5,14 +5,12 @@ import { Label } from '@/components/ui/label'
 import { RadioGroup, RadioGroupItem } from '@/components/ui/radio-group'
 import { Separator } from '@/components/ui/separator'
 import { useStore } from '@/store/store'
-import { Banknote, CreditCard, Wallet } from 'lucide-react'
 import Link from 'next/link'
 import { useRouter } from 'next/navigation'
 import React, { useEffect, useState } from 'react'
 import {motion} from "framer-motion"
-type Props = {}
 
-const ChoosePayment = (props: Props) => {
+const ChoosePayment = () => {
   const { cart } = useStore()
   const router = useRouter()
   const [timeLeft, setTimeleft] = useState(600) //600 seconds- 10 min

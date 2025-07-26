@@ -7,12 +7,13 @@ import { Input } from './ui/input'
 import { SquarePen } from 'lucide-react'
 import { MenuItem } from '@/generated/prisma'
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from './ui/select'
-import { updateMenuAction } from '@/actions/updateMenu'
+import { updateMenuAction, updateMenuFormState } from '@/actions/updateMenu'
 
 
 const UpdateMenu = ({ menu }: { menu: MenuItem }) => {
   const categories = ["Pizza", "Pasta", "Salad", "Dessert", "Drink"];
-  const [formState, formAction, isPending] = useActionState(updateMenuAction, { errors: {} })
+  const updateInitialState:updateMenuFormState =  { errors: {} }
+  const [formState, formAction, isPending] = useActionState(updateMenuAction,updateInitialState)
   const formHandle = (formData: FormData) => {
     formData.append("id", menu.id)
     return formAction(formData)

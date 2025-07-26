@@ -4,10 +4,10 @@ import { Button } from './ui/button'
 import { Trash2 } from 'lucide-react'
 import { deleteItem } from '@/actions/deleteMenu'
 
-type Props = {}
 //React props are object so we write {id: string}
 const DeleteMenuItem = ({id}:{id:string}) => {
-    const [formState, formAction, isPending] = useActionState(deleteItem, "")
+  // since formState is not used so remove that
+    const [, formAction, isPending] = useActionState(deleteItem, null)
     const handleDelete = () => {
       const formData = new FormData()
       formData.append("id", id)

@@ -8,9 +8,9 @@ import toast from 'react-hot-toast'
 import { motion } from "framer-motion"
 import ProtectedRoute from '@/components/ProtectedRoute'
 
-type Props = {}
 
-const reservation = (props: Props) => {
+
+const Reservation = () => {
     const [formData, setFormData] = useState({
         FirstName: "",
         Email: "",
@@ -76,4 +76,4 @@ const reservation = (props: Props) => {
     )
 }
 
-export default reservation
+export default Reservation

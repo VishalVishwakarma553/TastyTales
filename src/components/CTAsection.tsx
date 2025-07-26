@@ -2,9 +2,8 @@ import Link from 'next/link'
 import React from 'react'
 import { Button } from './ui/button'
 
-type Props = {}
 
-const CTAsection = (props: Props) => {
+const CTAsection = () => {
     return (
         <section className='py-16 bg-[#16223c] text-primary-foreground my-4 relative dotted-bg '>
             <div className='text-center space-y-2'>

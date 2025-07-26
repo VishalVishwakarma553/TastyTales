@@ -1,8 +1,7 @@
 import React from 'react'
 
-type Props = {}
 
-const MenuSkeleton = (props: Props) => {
+const MenuSkeleton = () => {
   return (
     <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8'>
         {[1,2,3,4,5,6].map((id) => (

@@ -4,9 +4,8 @@ import { Button } from '../ui/button'
 import Link from 'next/link'
 import { motion } from "framer-motion"
 
-type Props = {}
 
-const NoOrder = (props: Props) => {
+const NoOrder = () => {
   return (
     <div className='flex flex-col justify-center items-center space-y-1'>
       <motion.div

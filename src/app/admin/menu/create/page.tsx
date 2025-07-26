@@ -1,6 +1,6 @@
 "use client"
 import React, { useActionState, useState } from 'react'
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import Link from 'next/link'
 import { Button } from '@/components/ui/button'
 import { Label } from '@radix-ui/react-label'
@@ -8,15 +8,15 @@ import { Input } from '@/components/ui/input'
 import { Textarea } from '@/components/ui/textarea'
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select'
 import UploadImage from '@/components/UploadImage'
-import { createMenuAction } from '@/actions/createMenu'
+import { createMenuAction, createMenuFormState } from '@/actions/createMenu'
 import { motion } from "framer-motion"
 import ProtectedRoute from '@/components/ProtectedRoute'
-type Props = {}
 
-const page = (props: Props) => {
+const CreateMenuPage = () => {
     const categories = ["Pizza", "Pasta", "Salad", "Dessert", "Drink"];
     const [imageUrl, setImageUrl] = useState<string | null>(null)
-    const [formState, formAction, isPending] = useActionState(createMenuAction, { errors: {} })
+    const initialFormState:createMenuFormState = { errors: {} }
+    const [formState, formAction, isPending] = useActionState(createMenuAction, initialFormState)
     const handleAction = (formData: FormData) => {
         formData.append("image", imageUrl || "")
         console.log(imageUrl)
@@ -107,4 +107,4 @@ const page = (props: Props) => {
     )
 }
 
-export default page
+export default CreateMenuPage

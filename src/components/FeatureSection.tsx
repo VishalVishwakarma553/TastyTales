@@ -6,9 +6,8 @@ import Image from 'next/image'
 import { motion } from 'framer-motion'
 import Link from 'next/link'
 
-type Props = {}
 
-const FeatureSection = (props: Props) => {
+const FeatureSection = () => {
     //     const menuList = await prisma.menuItem.findMany({
     //     orderBy:{createdAt:"desc"},
     //     take:3

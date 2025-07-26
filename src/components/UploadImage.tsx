@@ -8,9 +8,6 @@ import {
     upload,
 } from "@imagekit/next";
 import { useRef, useState } from "react";
-import { Label } from "./ui/label";
-import { Input } from "./ui/input";
-import { Button } from "./ui/button";
 
 //Declaring type of the setImageUrl function which takes string as argument and return type is void
 type UploadImageProp = {

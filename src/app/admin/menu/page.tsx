@@ -3,9 +3,7 @@ import React from 'react'
 import MenuTableMotionWrapper from '@/components/MenuTableMotionWrapper'
 import ProtectedRoute from '@/components/ProtectedRoute'
 
-type Props = {}
-
-const page = async (props: Props) => {
+const page = async () => {
   const allMenuItems = await prisma.menuItem.findMany({
     orderBy: { createdAt: 'desc' }
   })

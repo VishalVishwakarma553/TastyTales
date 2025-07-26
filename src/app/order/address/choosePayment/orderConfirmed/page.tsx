@@ -1,17 +1,9 @@
-"use client"
 import { Button } from '@/components/ui/button'
 import Link from 'next/link'
-import React, { useEffect, useState } from 'react'
 
-type Props = {}
 
-const OrderConfirmed = (props: Props) => {
-  const [animate, setAnimate] = useState(false)
-
-  useEffect(() => {
-    const timer = setTimeout(() => setAnimate(true), 100)
-    return () => clearTimeout(timer)
-  }, [])
+const OrderConfirmed = () => {
+  
   return (
     <div className="fixed inset-0 flex flex-col items-center justify-center p-6">
       {/* ✅ Animated Checkmark */}
