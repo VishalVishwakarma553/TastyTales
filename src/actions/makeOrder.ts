@@ -9,6 +9,7 @@ import { auth } from "@clerk/nextjs/server"
 export const saveOrder = async(cart:CartItem[]) => {
     try{
         const {userId} = await auth() ||""
+        console.log(userId)
         const totalAmount = cart.reduce((acc, item) => acc + item.price*item.quantity, 0)
         await prisma.order.create({
             data:{

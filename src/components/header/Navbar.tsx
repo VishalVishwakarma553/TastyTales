@@ -4,7 +4,7 @@ import React, { useEffect, useState } from 'react'
 import { Input } from '../ui/input'
 import { Ghost, Menu, Search, ShoppingCart, X } from 'lucide-react'
 import { Button } from '../ui/button'
-import { SignedIn, UserButton } from '@clerk/nextjs'
+import { SignedIn, SignedOut, SignInButton, SignUpButton, UserButton } from '@clerk/nextjs'
 import { useStore } from '@/store/store'
 import { motion, AnimatePresence } from "framer-motion"
 import { redirect, usePathname, useRouter } from 'next/navigation'
@@ -69,6 +69,11 @@ const Navbar = () => {
                         </Button>
                     </Link>
                     {/* User Auth */}
+                    <SignedOut>
+                        <SignUpButton >
+                            <Button variant={"outline"} className='bg-[#6c47ff] hover:bg-[#6c47ffeb] hover:text-white text-white cursor-pointer'>Sign Up</Button>
+                        </SignUpButton>
+                    </SignedOut>
                     <SignedIn>
                         <UserButton />
                     </SignedIn>
